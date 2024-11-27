@@ -6,6 +6,16 @@
 
 `pip install "opencompass[api]"`
 
+### 配置参考
+
+成功配置用于 GraphRAG 的环境，可以参考以下两个视频进行搭建：
+- [GraphRAG 配置视频 1](https://www.bilibili.com/video/BV1HmWQeKEQB/?spm_id_from=..search-card.all.click&vd_source=dd722f9cbe299d2a0d932b162f651357)
+- [GraphRAG 配置视频 2](https://www.bilibili.com/video/BV1aKWTexEeH/?vd_source=30acb5331e4f5739ebbad50f7cc6b949)
+
+成功配置 OpenCompass 环境，除了 OpenCompass 自身必要的安装以外，还需要额外安装对 `data` 和 `api` 的支持。这些内容可以参考 OpenCompass 的[说明文档](https://github.com/open-compass/opencompass)。
+
+---
+
 ## 启动和配置
 
 要正常运行 GraphRAG 的测评，首先需要启动`one-api`，并在 GraphRAG 文件夹中配置 API。
@@ -29,6 +39,8 @@
   如果需要使用该评测，需要修改`opencompass/configs/api_examples/eval_api_zhipu_v2.py`中的 API key。
 
 - 运行`configs/eval_myTest.py`会对 GraphRAG 进行评测，但需要提前启动`one-api`服务。
+
+---
 
 ## GraphRAG 测评文件说明
 
