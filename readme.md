@@ -2,7 +2,7 @@
 
 ## 环境配置
 
-除了 GraphRAG 和 OpenCompass 的 conda 环境配置外，为了使用 API 测评，还需要额外安装以下依赖：
+除了 GraphRAG 和 OpenCompass 分别的 conda 环境配置外，为了使用 API 测评，还需要额外安装以下依赖：
 
 `pip install "opencompass[api]"`
 
