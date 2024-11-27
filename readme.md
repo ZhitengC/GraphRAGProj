@@ -1,4 +1,4 @@
-# 使用 GraphRAG 和 OpenCompass 进行 API 评测说明
+# 使用 GraphRAG 和 OpenCompass 进行评测， 以及对于GraphRAG进行优化
 
 ## 环境配置
 
