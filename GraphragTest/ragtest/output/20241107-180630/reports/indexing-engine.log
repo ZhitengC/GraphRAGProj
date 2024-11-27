@@ -1,0 +1,586 @@
+18:06:30,719 graphrag.config.read_dotenv INFO Loading pipeline .env file
+18:06:30,722 graphrag.index.cli INFO using default configuration: {
+    "llm": {
+        "api_key": "REDACTED, length 51",
+        "type": "openai_chat",
+        "model": "glm-4",
+        "max_tokens": 2000,
+        "temperature": 0.95,
+        "top_p": 0.7,
+        "n": 1,
+        "request_timeout": 180.0,
+        "api_base": "http://localhost:3000/v1",
+        "api_version": null,
+        "proxy": null,
+        "cognitive_services_endpoint": null,
+        "deployment_name": null,
+        "model_supports_json": true,
+        "tokens_per_minute": 0,
+        "requests_per_minute": 0,
+        "max_retries": 10,
+        "max_retry_wait": 10.0,
+        "sleep_on_rate_limit_recommendation": true,
+        "concurrent_requests": 25
+    },
+    "parallelization": {
+        "stagger": 0.3,
+        "num_threads": 50
+    },
+    "async_mode": "threaded",
+    "root_dir": "./",
+    "reporting": {
+        "type": "file",
+        "base_dir": "inputs/reports",
+        "storage_account_blob_url": null
+    },
+    "storage": {
+        "type": "file",
+        "base_dir": "inputs/artifacts",
+        "storage_account_blob_url": null
+    },
+    "cache": {
+        "type": "file",
+        "base_dir": "cache",
+        "storage_account_blob_url": null
+    },
+    "input": {
+        "type": "file",
+        "file_type": "text",
+        "base_dir": "input",
+        "storage_account_blob_url": null,
+        "encoding": "utf-8",
+        "file_pattern": ".*\\.txt$",
+        "file_filter": null,
+        "source_column": null,
+        "timestamp_column": null,
+        "timestamp_format": null,
+        "text_column": "text",
+        "title_column": null,
+        "document_attribute_columns": []
+    },
+    "embed_graph": {
+        "enabled": false,
+        "num_walks": 10,
+        "walk_length": 40,
+        "window_size": 2,
+        "iterations": 3,
+        "random_seed": 597832,
+        "strategy": null
+    },
+    "embeddings": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_embedding",
+            "model": "embedding-2",
+            "max_tokens": 4000,
+            "temperature": 0,
+            "top_p": 1,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": null,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "batch_size": 1,
+        "batch_max_tokens": 8000,
+        "target": "required",
+        "skip": [],
+        "vector_store": null,
+        "strategy": null
+    },
+    "chunks": {
+        "size": 1200,
+        "overlap": 100,
+        "group_by_columns": [
+            "id"
+        ],
+        "strategy": null,
+        "encoding_model": null
+    },
+    "snapshots": {
+        "graphml": false,
+        "raw_entities": false,
+        "top_level_nodes": false
+    },
+    "entity_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/entity_extraction.txt",
+        "entity_types": [
+            "organization",
+            "person",
+            "geo",
+            "event"
+        ],
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "summarize_descriptions": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "strategy": null
+    },
+    "community_reports": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/community_report.txt",
+        "max_length": 2000,
+        "max_input_length": 8000,
+        "strategy": null
+    },
+    "claim_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "enabled": true,
+        "prompt": "prompts/claim_extraction.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "strategy": null
+    },
+    "umap": {
+        "enabled": false
+    },
+    "local_search": {
+        "text_unit_prop": 0.5,
+        "community_prop": 0.1,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "llm_max_tokens": 2000
+    },
+    "global_search": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_tokens": 1000,
+        "reduce_max_tokens": 2000,
+        "concurrency": 32
+    },
+    "encoding_model": "cl100k_base",
+    "skip_workflows": []
+}
+18:06:30,723 graphrag.index.create_pipeline_config INFO skipping workflows 
+18:06:30,725 graphrag.index.run INFO Running pipeline
+18:06:30,725 graphrag.index.storage.file_pipeline_storage INFO Creating file storage at inputs/artifacts
+18:06:30,725 graphrag.index.input.load_input INFO loading input from root_dir=input
+18:06:30,725 graphrag.index.input.load_input INFO using file storage for input
+18:06:30,726 graphrag.index.storage.file_pipeline_storage INFO search input for files matching .*\.txt$
+18:06:30,726 graphrag.index.input.text INFO found text files from input, found [('currentPrompt.txt', {})]
+18:06:30,727 graphrag.index.input.text INFO Found 1 files, loading 1
+18:06:30,728 graphrag.index.workflows.load INFO Workflow Run Order: ['create_base_text_units', 'create_base_extracted_entities', 'create_final_covariates', 'create_summarized_entities', 'join_text_units_to_covariate_ids', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 'create_final_relationships', 'join_text_units_to_relationship_ids', 'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+18:06:30,728 graphrag.index.run INFO Final # of rows loaded: 1
+18:06:30,814 graphrag.index.run INFO Running workflow: create_base_text_units...
+18:06:30,814 graphrag.index.run INFO dependencies for create_base_text_units: []
+18:06:30,816 datashaper.workflow.workflow INFO executing verb orderby
+18:06:30,818 datashaper.workflow.workflow INFO executing verb zip
+18:06:30,819 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:06:30,822 datashaper.workflow.workflow INFO executing verb chunk
+18:06:30,914 datashaper.workflow.workflow INFO executing verb select
+18:06:30,916 datashaper.workflow.workflow INFO executing verb unroll
+18:06:30,919 datashaper.workflow.workflow INFO executing verb rename
+18:06:30,920 datashaper.workflow.workflow INFO executing verb genid
+18:06:30,923 datashaper.workflow.workflow INFO executing verb unzip
+18:06:30,925 datashaper.workflow.workflow INFO executing verb copy
+18:06:30,928 datashaper.workflow.workflow INFO executing verb filter
+18:06:30,933 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_text_units.parquet
+18:06:31,36 graphrag.index.run INFO Running workflow: create_base_extracted_entities...
+18:06:31,36 graphrag.index.run INFO dependencies for create_base_extracted_entities: ['create_base_text_units']
+18:06:31,36 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+18:06:31,44 datashaper.workflow.workflow INFO executing verb entity_extract
+18:06:31,46 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=http://localhost:3000/v1
+18:06:31,50 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for glm-4: TPM=0, RPM=0
+18:06:31,50 graphrag.index.llm.load_llm INFO create concurrency limiter for glm-4: 25
+18:06:31,72 datashaper.workflow.workflow INFO executing verb merge_graphs
+18:06:31,83 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_extracted_entities.parquet
+18:06:31,185 graphrag.index.run INFO Running workflow: create_final_covariates...
+18:06:31,185 graphrag.index.run INFO dependencies for create_final_covariates: ['create_base_text_units']
+18:06:31,186 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+18:06:31,195 datashaper.workflow.workflow INFO executing verb extract_covariates
+18:06:31,213 datashaper.workflow.workflow INFO executing verb window
+18:06:31,217 datashaper.workflow.workflow INFO executing verb genid
+18:06:31,220 datashaper.workflow.workflow INFO executing verb convert
+18:06:31,228 datashaper.workflow.workflow INFO executing verb rename
+18:06:31,232 datashaper.workflow.workflow INFO executing verb select
+18:06:31,233 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_covariates.parquet
+18:06:31,338 graphrag.index.run INFO Running workflow: create_summarized_entities...
+18:06:31,339 graphrag.index.run INFO dependencies for create_summarized_entities: ['create_base_extracted_entities']
+18:06:31,339 graphrag.index.run INFO read table from storage: create_base_extracted_entities.parquet
+18:06:31,348 datashaper.workflow.workflow INFO executing verb summarize_descriptions
+18:06:31,385 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_summarized_entities.parquet
+18:06:31,482 graphrag.index.run INFO Running workflow: join_text_units_to_covariate_ids...
+18:06:31,482 graphrag.index.run INFO dependencies for join_text_units_to_covariate_ids: ['create_final_covariates']
+18:06:31,482 graphrag.index.run INFO read table from storage: create_final_covariates.parquet
+18:06:31,494 datashaper.workflow.workflow INFO executing verb select
+18:06:31,499 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:06:31,501 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_covariate_ids.parquet
+18:06:31,601 graphrag.index.run INFO Running workflow: create_base_entity_graph...
+18:06:31,601 graphrag.index.run INFO dependencies for create_base_entity_graph: ['create_summarized_entities']
+18:06:31,601 graphrag.index.run INFO read table from storage: create_summarized_entities.parquet
+18:06:31,611 datashaper.workflow.workflow INFO executing verb cluster_graph
+18:06:31,646 datashaper.workflow.workflow INFO executing verb select
+18:06:31,647 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_entity_graph.parquet
+18:06:31,748 graphrag.index.run INFO Running workflow: create_final_entities...
+18:06:31,748 graphrag.index.run INFO dependencies for create_final_entities: ['create_base_entity_graph']
+18:06:31,753 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+18:06:31,767 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:06:31,781 datashaper.workflow.workflow INFO executing verb rename
+18:06:31,786 datashaper.workflow.workflow INFO executing verb select
+18:06:31,791 datashaper.workflow.workflow INFO executing verb dedupe
+18:06:31,796 datashaper.workflow.workflow INFO executing verb rename
+18:06:31,802 datashaper.workflow.workflow INFO executing verb filter
+18:06:31,815 datashaper.workflow.workflow INFO executing verb text_split
+18:06:31,822 datashaper.workflow.workflow INFO executing verb drop
+18:06:31,827 datashaper.workflow.workflow INFO executing verb merge
+18:06:31,855 datashaper.workflow.workflow INFO executing verb text_embed
+18:06:31,855 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=http://localhost:3000/v1
+18:06:31,859 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for embedding-2: TPM=0, RPM=0
+18:06:31,859 graphrag.index.llm.load_llm INFO create concurrency limiter for embedding-2: 25
+18:06:31,865 graphrag.index.verbs.text.embed.strategies.openai INFO embedding 301 inputs via 301 snippets using 301 batches. max_batch_size=1, max_tokens=8000
+18:06:32,237 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,239 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.3720000000012078. input_tokens=27, output_tokens=0
+18:06:32,486 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,488 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6159999999999854. input_tokens=26, output_tokens=0
+18:06:32,489 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,492 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.5959999999995489. input_tokens=29, output_tokens=0
+18:06:32,492 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,492 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,493 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,495 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6239999999997963. input_tokens=32, output_tokens=0
+18:06:32,497 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6239999999997963. input_tokens=27, output_tokens=0
+18:06:32,500 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6289999999989959. input_tokens=26, output_tokens=0
+18:06:32,500 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,500 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,504 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6300000000010186. input_tokens=29, output_tokens=0
+18:06:32,506 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6329999999998108. input_tokens=34, output_tokens=0
+18:06:32,507 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,507 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,510 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6159999999999854. input_tokens=32, output_tokens=0
+18:06:32,513 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6159999999999854. input_tokens=33, output_tokens=0
+18:06:32,513 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,513 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,516 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6230000000014115. input_tokens=30, output_tokens=0
+18:06:32,519 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.6219999999993888. input_tokens=29, output_tokens=0
+18:06:32,702 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,702 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,704 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8100000000013097. input_tokens=28, output_tokens=0
+18:06:32,707 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8029999999998836. input_tokens=27, output_tokens=0
+18:06:32,714 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,714 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,714 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,714 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,715 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,716 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:32,718 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8449999999993452. input_tokens=27, output_tokens=0
+18:06:32,720 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8490000000001601. input_tokens=28, output_tokens=0
+18:06:32,723 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8479999999999563. input_tokens=28, output_tokens=0
+18:06:32,725 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8519999999989523. input_tokens=31, output_tokens=0
+18:06:32,727 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8539999999993597. input_tokens=26, output_tokens=0
+18:06:32,730 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8590000000003783. input_tokens=27, output_tokens=0
+18:06:32,732 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8609999999989668. input_tokens=29, output_tokens=0
+18:06:32,734 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8619999999991705. input_tokens=29, output_tokens=0
+18:06:32,737 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8659999999999854. input_tokens=26, output_tokens=0
+18:06:32,740 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8689999999987776. input_tokens=27, output_tokens=0
+18:06:32,742 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.8699999999989814. input_tokens=30, output_tokens=0
+18:06:33,14 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:33,16 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.7770000000000437. input_tokens=32, output_tokens=0
+18:06:34,649 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:34,652 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.143999999998414. input_tokens=28, output_tokens=0
+18:06:34,676 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:34,678 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.17699999999968. input_tokens=30, output_tokens=0
+18:06:34,680 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:34,683 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.168999999999869. input_tokens=31, output_tokens=0
+18:06:34,857 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:34,859 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.3510000000005675. input_tokens=30, output_tokens=0
+18:06:34,860 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 200 OK"
+18:06:34,862 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.361000000000786. input_tokens=30, output_tokens=0
+18:06:35,506 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 401 Unauthorized"
+18:06:35,507 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': ['PRUDHOE BAY:Certainly! Please provide me with the entities and the list of descriptions you would like me to summarize comprehensively.']}
+18:06:35,507 datashaper.workflow.workflow ERROR Error executing verb "text_embed" in create_final_entities: Error code: 401 - {'error': {'message': '令牌验证失败 (request id: 2024110718063250099236892055588)', 'type': 'one_api_error'}}
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 415, in _execute_verb
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/text_embed.py", line 105, in text_embed
+    return await _text_embed_in_memory(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/text_embed.py", line 130, in _text_embed_in_memory
+    result = await strategy_exec(texts, callbacks, cache, strategy_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 62, in run
+    embeddings = await _execute(llm, text_batches, ticker, semaphore)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 106, in _execute
+    results = await asyncio.gather(*futures)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 100, in embed
+    chunk_embeddings = await llm(chunk)
+                       ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/caching_llm.py", line 96, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 177, in __call__
+    result, start = await execute_with_retry()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 159, in execute_with_retry
+    async for attempt in retryer:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 165, in execute_with_retry
+    return await do_attempt(), start
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 147, in do_attempt
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 49, in __call__
+    return await self._invoke(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 53, in _invoke
+    output = await self._execute_llm(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_embeddings_llm.py", line 36, in _execute_llm
+    embedding = await self.client.embeddings.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/resources/embeddings.py", line 237, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1816, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1510, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1611, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': '令牌验证失败 (request id: 2024110718063250099236892055588)', 'type': 'one_api_error'}}
+18:06:35,508 graphrag.index.reporting.file_workflow_callbacks INFO Error executing verb "text_embed" in create_final_entities: Error code: 401 - {'error': {'message': '令牌验证失败 (request id: 2024110718063250099236892055588)', 'type': 'one_api_error'}} details=None
+18:06:35,514 graphrag.index.run ERROR error running workflow create_final_entities
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/run.py", line 325, in run_pipeline
+    result = await workflow.run(context, callbacks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 369, in run
+    timing = await self._execute_verb(node, context, callbacks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 415, in _execute_verb
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/text_embed.py", line 105, in text_embed
+    return await _text_embed_in_memory(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/text_embed.py", line 130, in _text_embed_in_memory
+    result = await strategy_exec(texts, callbacks, cache, strategy_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 62, in run
+    embeddings = await _execute(llm, text_batches, ticker, semaphore)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 106, in _execute
+    results = await asyncio.gather(*futures)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/text/embed/strategies/openai.py", line 100, in embed
+    chunk_embeddings = await llm(chunk)
+                       ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/caching_llm.py", line 96, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 177, in __call__
+    result, start = await execute_with_retry()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 159, in execute_with_retry
+    async for attempt in retryer:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 165, in execute_with_retry
+    return await do_attempt(), start
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 147, in do_attempt
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 49, in __call__
+    return await self._invoke(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 53, in _invoke
+    output = await self._execute_llm(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_embeddings_llm.py", line 36, in _execute_llm
+    embedding = await self.client.embeddings.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/resources/embeddings.py", line 237, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1816, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1510, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1611, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': '令牌验证失败 (request id: 2024110718063250099236892055588)', 'type': 'one_api_error'}}
+18:06:35,515 graphrag.index.reporting.file_workflow_callbacks INFO Error running pipeline! details=None
+18:06:35,527 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 401 Unauthorized"
+18:06:35,528 httpx INFO HTTP Request: POST http://localhost:3000/v1/embeddings "HTTP/1.1 401 Unauthorized"
+18:06:35,529 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': ['GOVERNOR OF ALASKA:Certainly! Please provide me with the entities and the list of descriptions you would like me to summarize comprehensively.']}
+18:06:35,529 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': ['TED STEVENS ANCHORAGE INTERNATIONAL AIRPORT:Certainly! Please provide me with the entities and the list of descriptions you would like me to summarize comprehensively.']}

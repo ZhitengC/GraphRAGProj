@@ -1,0 +1,1060 @@
+15:15:05,629 graphrag.config.read_dotenv INFO Loading pipeline .env file
+15:15:05,635 graphrag.index.cli INFO using default configuration: {
+    "llm": {
+        "api_key": "REDACTED, length 51",
+        "type": "openai_chat",
+        "model": "glm-4",
+        "max_tokens": 2000,
+        "temperature": 0.95,
+        "top_p": 0.7,
+        "n": 1,
+        "request_timeout": 180.0,
+        "api_base": "http://localhost:3000/v1",
+        "api_version": null,
+        "proxy": null,
+        "cognitive_services_endpoint": null,
+        "deployment_name": null,
+        "model_supports_json": true,
+        "tokens_per_minute": 0,
+        "requests_per_minute": 0,
+        "max_retries": 10,
+        "max_retry_wait": 10.0,
+        "sleep_on_rate_limit_recommendation": true,
+        "concurrent_requests": 25
+    },
+    "parallelization": {
+        "stagger": 0.3,
+        "num_threads": 50
+    },
+    "async_mode": "threaded",
+    "root_dir": "./",
+    "reporting": {
+        "type": "file",
+        "base_dir": "inputs/reports",
+        "storage_account_blob_url": null
+    },
+    "storage": {
+        "type": "file",
+        "base_dir": "inputs/artifacts",
+        "storage_account_blob_url": null
+    },
+    "cache": {
+        "type": "file",
+        "base_dir": "cache",
+        "storage_account_blob_url": null
+    },
+    "input": {
+        "type": "file",
+        "file_type": "text",
+        "base_dir": "input",
+        "storage_account_blob_url": null,
+        "encoding": "utf-8",
+        "file_pattern": ".*\\.txt$",
+        "file_filter": null,
+        "source_column": null,
+        "timestamp_column": null,
+        "timestamp_format": null,
+        "text_column": "text",
+        "title_column": null,
+        "document_attribute_columns": []
+    },
+    "embed_graph": {
+        "enabled": false,
+        "num_walks": 10,
+        "walk_length": 40,
+        "window_size": 2,
+        "iterations": 3,
+        "random_seed": 597832,
+        "strategy": null
+    },
+    "embeddings": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_embedding",
+            "model": "embedding-2",
+            "max_tokens": 4000,
+            "temperature": 0,
+            "top_p": 1,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": null,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "batch_size": 1,
+        "batch_max_tokens": 8000,
+        "target": "required",
+        "skip": [],
+        "vector_store": null,
+        "strategy": null
+    },
+    "chunks": {
+        "size": 1200,
+        "overlap": 100,
+        "group_by_columns": [
+            "id"
+        ],
+        "strategy": null,
+        "encoding_model": null
+    },
+    "snapshots": {
+        "graphml": false,
+        "raw_entities": false,
+        "top_level_nodes": false
+    },
+    "entity_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/entity_extraction.txt",
+        "entity_types": [
+            "organization",
+            "person",
+            "geo",
+            "event"
+        ],
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "summarize_descriptions": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "strategy": null
+    },
+    "community_reports": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/community_report.txt",
+        "max_length": 2000,
+        "max_input_length": 8000,
+        "strategy": null
+    },
+    "claim_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "enabled": true,
+        "prompt": "prompts/claim_extraction.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "strategy": null
+    },
+    "umap": {
+        "enabled": false
+    },
+    "local_search": {
+        "text_unit_prop": 0.5,
+        "community_prop": 0.1,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "llm_max_tokens": 2000
+    },
+    "global_search": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_tokens": 1000,
+        "reduce_max_tokens": 2000,
+        "concurrency": 32
+    },
+    "encoding_model": "cl100k_base",
+    "skip_workflows": []
+}
+15:15:05,637 graphrag.index.create_pipeline_config INFO skipping workflows 
+15:15:05,641 graphrag.index.run INFO Running pipeline
+15:15:05,641 graphrag.index.storage.file_pipeline_storage INFO Creating file storage at inputs/artifacts
+15:15:05,642 graphrag.index.input.load_input INFO loading input from root_dir=input
+15:15:05,642 graphrag.index.input.load_input INFO using file storage for input
+15:15:05,643 graphrag.index.storage.file_pipeline_storage INFO search input for files matching .*\.txt$
+15:15:05,643 graphrag.index.input.text INFO found text files from input, found [('currentPrompt.txt', {})]
+15:15:05,645 graphrag.index.input.text INFO Found 1 files, loading 1
+15:15:05,647 graphrag.index.workflows.load INFO Workflow Run Order: ['create_base_text_units', 'create_base_extracted_entities', 'create_final_covariates', 'create_summarized_entities', 'join_text_units_to_covariate_ids', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 'create_final_relationships', 'join_text_units_to_relationship_ids', 'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+15:15:05,647 graphrag.index.run INFO Final # of rows loaded: 1
+15:15:05,764 graphrag.index.run INFO Running workflow: create_base_text_units...
+15:15:05,764 graphrag.index.run INFO dependencies for create_base_text_units: []
+15:15:05,768 datashaper.workflow.workflow INFO executing verb orderby
+15:15:05,771 datashaper.workflow.workflow INFO executing verb zip
+15:15:05,773 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:15:05,777 datashaper.workflow.workflow INFO executing verb chunk
+15:15:05,880 graphrag.config.read_dotenv INFO Loading pipeline .env file
+15:15:05,883 graphrag.index.cli INFO using default configuration: {
+    "llm": {
+        "api_key": "REDACTED, length 51",
+        "type": "openai_chat",
+        "model": "glm-4",
+        "max_tokens": 2000,
+        "temperature": 0.95,
+        "top_p": 0.7,
+        "n": 1,
+        "request_timeout": 180.0,
+        "api_base": "http://localhost:3000/v1",
+        "api_version": null,
+        "proxy": null,
+        "cognitive_services_endpoint": null,
+        "deployment_name": null,
+        "model_supports_json": true,
+        "tokens_per_minute": 0,
+        "requests_per_minute": 0,
+        "max_retries": 10,
+        "max_retry_wait": 10.0,
+        "sleep_on_rate_limit_recommendation": true,
+        "concurrent_requests": 25
+    },
+    "parallelization": {
+        "stagger": 0.3,
+        "num_threads": 50
+    },
+    "async_mode": "threaded",
+    "root_dir": "./",
+    "reporting": {
+        "type": "file",
+        "base_dir": "inputs/reports",
+        "storage_account_blob_url": null
+    },
+    "storage": {
+        "type": "file",
+        "base_dir": "inputs/artifacts",
+        "storage_account_blob_url": null
+    },
+    "cache": {
+        "type": "file",
+        "base_dir": "cache",
+        "storage_account_blob_url": null
+    },
+    "input": {
+        "type": "file",
+        "file_type": "text",
+        "base_dir": "input",
+        "storage_account_blob_url": null,
+        "encoding": "utf-8",
+        "file_pattern": ".*\\.txt$",
+        "file_filter": null,
+        "source_column": null,
+        "timestamp_column": null,
+        "timestamp_format": null,
+        "text_column": "text",
+        "title_column": null,
+        "document_attribute_columns": []
+    },
+    "embed_graph": {
+        "enabled": false,
+        "num_walks": 10,
+        "walk_length": 40,
+        "window_size": 2,
+        "iterations": 3,
+        "random_seed": 597832,
+        "strategy": null
+    },
+    "embeddings": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_embedding",
+            "model": "embedding-2",
+            "max_tokens": 4000,
+            "temperature": 0,
+            "top_p": 1,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": null,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "batch_size": 1,
+        "batch_max_tokens": 8000,
+        "target": "required",
+        "skip": [],
+        "vector_store": null,
+        "strategy": null
+    },
+    "chunks": {
+        "size": 1200,
+        "overlap": 100,
+        "group_by_columns": [
+            "id"
+        ],
+        "strategy": null,
+        "encoding_model": null
+    },
+    "snapshots": {
+        "graphml": false,
+        "raw_entities": false,
+        "top_level_nodes": false
+    },
+    "entity_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/entity_extraction.txt",
+        "entity_types": [
+            "organization",
+            "person",
+            "geo",
+            "event"
+        ],
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "summarize_descriptions": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "strategy": null
+    },
+    "community_reports": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/community_report.txt",
+        "max_length": 2000,
+        "max_input_length": 8000,
+        "strategy": null
+    },
+    "claim_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 51",
+            "type": "openai_chat",
+            "model": "glm-4",
+            "max_tokens": 2000,
+            "temperature": 0.95,
+            "top_p": 0.7,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "http://localhost:3000/v1",
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "enabled": true,
+        "prompt": "prompts/claim_extraction.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "strategy": null
+    },
+    "umap": {
+        "enabled": false
+    },
+    "local_search": {
+        "text_unit_prop": 0.5,
+        "community_prop": 0.1,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "llm_max_tokens": 2000
+    },
+    "global_search": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_tokens": 1000,
+        "reduce_max_tokens": 2000,
+        "concurrency": 32
+    },
+    "encoding_model": "cl100k_base",
+    "skip_workflows": []
+}
+15:15:05,884 graphrag.index.create_pipeline_config INFO skipping workflows 
+15:15:05,887 graphrag.index.run INFO Running pipeline
+15:15:05,887 graphrag.index.storage.file_pipeline_storage INFO Creating file storage at inputs/artifacts
+15:15:05,887 graphrag.index.input.load_input INFO loading input from root_dir=input
+15:15:05,887 graphrag.index.input.load_input INFO using file storage for input
+15:15:05,888 graphrag.index.storage.file_pipeline_storage INFO search input for files matching .*\.txt$
+15:15:05,888 graphrag.index.input.text INFO found text files from input, found [('currentPrompt.txt', {})]
+15:15:05,889 graphrag.index.input.text INFO Found 1 files, loading 1
+15:15:05,890 graphrag.index.workflows.load INFO Workflow Run Order: ['create_base_text_units', 'create_base_extracted_entities', 'create_final_covariates', 'create_summarized_entities', 'join_text_units_to_covariate_ids', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 'create_final_relationships', 'join_text_units_to_relationship_ids', 'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+15:15:05,890 graphrag.index.run INFO Final # of rows loaded: 1
+15:15:05,917 datashaper.workflow.workflow INFO executing verb select
+15:15:05,921 datashaper.workflow.workflow INFO executing verb unroll
+15:15:05,927 datashaper.workflow.workflow INFO executing verb rename
+15:15:05,932 datashaper.workflow.workflow INFO executing verb genid
+15:15:05,937 datashaper.workflow.workflow INFO executing verb unzip
+15:15:05,942 datashaper.workflow.workflow INFO executing verb copy
+15:15:05,947 datashaper.workflow.workflow INFO executing verb filter
+15:15:05,959 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_text_units.parquet
+15:15:06,11 graphrag.index.run INFO Running workflow: create_base_text_units...
+15:15:06,11 graphrag.index.run INFO dependencies for create_base_text_units: []
+15:15:06,14 datashaper.workflow.workflow INFO executing verb orderby
+15:15:06,16 datashaper.workflow.workflow INFO executing verb zip
+15:15:06,19 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:15:06,23 datashaper.workflow.workflow INFO executing verb chunk
+15:15:06,127 graphrag.index.run INFO Running workflow: create_base_extracted_entities...
+15:15:06,128 graphrag.index.run INFO dependencies for create_base_extracted_entities: ['create_base_text_units']
+15:15:06,128 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+15:15:06,138 datashaper.workflow.workflow INFO executing verb entity_extract
+15:15:06,139 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=http://localhost:3000/v1
+15:15:06,144 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for glm-4: TPM=0, RPM=0
+15:15:06,144 graphrag.index.llm.load_llm INFO create concurrency limiter for glm-4: 25
+15:15:06,154 datashaper.workflow.workflow INFO executing verb select
+15:15:06,156 datashaper.workflow.workflow INFO executing verb unroll
+15:15:06,160 datashaper.workflow.workflow INFO executing verb rename
+15:15:06,162 datashaper.workflow.workflow INFO executing verb genid
+15:15:06,166 datashaper.workflow.workflow INFO executing verb unzip
+15:15:06,172 datashaper.workflow.workflow INFO executing verb copy
+15:15:06,177 datashaper.workflow.workflow INFO executing verb filter
+15:15:06,189 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_text_units.parquet
+15:15:06,346 graphrag.index.run INFO Running workflow: create_base_extracted_entities...
+15:15:06,346 graphrag.index.run INFO dependencies for create_base_extracted_entities: ['create_base_text_units']
+15:15:06,346 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+15:15:06,358 datashaper.workflow.workflow INFO executing verb entity_extract
+15:15:06,360 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=http://localhost:3000/v1
+15:15:06,369 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for glm-4: TPM=0, RPM=0
+15:15:06,369 graphrag.index.llm.load_llm INFO create concurrency limiter for glm-4: 25
+15:15:31,272 asyncio ERROR Exception in callback Loop._read_from_self
+handle: <Handle Loop._read_from_self>
+Traceback (most recent call last):
+  File "uvloop/cbhandles.pyx", line 66, in uvloop.loop.Handle._run
+  File "uvloop/loop.pyx", line 397, in uvloop.loop.Loop._read_from_self
+  File "uvloop/loop.pyx", line 402, in uvloop.loop.Loop._invoke_signals
+  File "uvloop/loop.pyx", line 377, in uvloop.loop.Loop._ceval_process_signals
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/cli.py", line 109, in handle_signal
+    progress_reporter.info(f"Received signal {signum}, exiting...")
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 139, in info
+    self._console.print(message)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 1683, in print
+    with self:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2024, in _check_buffer
+    self._write_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2093, in _write_buffer
+    self.file.write(text)
+OSError: [Errno 5] Input/output error
+15:15:31,793 asyncio ERROR Exception in callback Loop._read_from_self
+handle: <Handle Loop._read_from_self>
+Traceback (most recent call last):
+  File "uvloop/cbhandles.pyx", line 66, in uvloop.loop.Handle._run
+  File "uvloop/loop.pyx", line 397, in uvloop.loop.Loop._read_from_self
+  File "uvloop/loop.pyx", line 402, in uvloop.loop.Loop._invoke_signals
+  File "uvloop/loop.pyx", line 377, in uvloop.loop.Loop._ceval_process_signals
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/cli.py", line 109, in handle_signal
+    progress_reporter.info(f"Received signal {signum}, exiting...")
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 139, in info
+    self._console.print(message)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 1683, in print
+    with self:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2024, in _check_buffer
+    self._write_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2093, in _write_buffer
+    self.file.write(text)
+OSError: [Errno 5] Input/output error
+15:15:31,795 datashaper.workflow.workflow ERROR Error executing verb "entity_extract" in create_base_extracted_entities: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 39, in execute
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/entity_extract.py", line 151, in run_strategy
+    result = await strategy_exec(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/run_graph_intelligence.py", line 41, in run_gi
+    return await run_extract_entities(llm, docs, entity_types, reporter, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/run_graph_intelligence.py", line 88, in run_extract_entities
+    results = await extractor(
+              ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/graph/extractors/graph/graph_extractor.py", line 123, in __call__
+    result = await self._process_document(text, prompt_variables)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/graph/extractors/graph/graph_extractor.py", line 151, in _process_document
+    response = await self._llm(
+               ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/json_parsing_llm.py", line 34, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_token_replacing_llm.py", line 37, in __call__
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_history_tracking_llm.py", line 33, in __call__
+    output = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/caching_llm.py", line 96, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 177, in __call__
+    result, start = await execute_with_retry()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 159, in execute_with_retry
+    async for attempt in retryer:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 165, in execute_with_retry
+    return await do_attempt(), start
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 147, in do_attempt
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 49, in __call__
+    return await self._invoke(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 53, in _invoke
+    output = await self._execute_llm(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_chat_llm.py", line 53, in _execute_llm
+    completion = await self.client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 1412, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1816, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1510, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1549, in _request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1674, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1702, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1739, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1776, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_transports/default.py", line 377, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 143, in handle_async_request
+    raise exc
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 113, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 186, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 224, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_backends/anyio.py", line 35, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1142, in receive
+    await self._protocol.read_event.wait()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 415, in _execute_verb
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/entity_extract.py", line 161, in entity_extract
+    results = await derive_from_rows(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows.py", line 33, in derive_from_rows
+    return await derive_from_rows_asyncio_threads(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 40, in derive_from_rows_asyncio_threads
+    return await derive_from_rows_base(input, transform, callbacks, gather)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 49, in derive_from_rows_base
+    result = await gather(execute)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 38, in gather
+    return await asyncio.gather(*[execute_task(task) for task in tasks])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 36, in execute_task
+    return await thread
+           ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 47, in execute
+    tick(1)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/progress/progress_ticker.py", line 21, in __call__
+    self._callback(
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/verb_callbacks/delegating_verb_callbacks.py", line 22, in progress
+    self._workflow_callbacks.on_step_progress(self._node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow_callbacks/workflow_callbacks_manager.py", line 51, in on_step_progress
+    callback.on_step_progress(node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow_callbacks/workflow_callbacks_manager.py", line 51, in on_step_progress
+    callback.on_step_progress(node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/reporting/progress_workflow_callbacks.py", line 54, in on_step_progress
+    self._latest(progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 165, in __call__
+    self.refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 111, in refresh
+    self.force_refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 115, in force_refresh
+    self.live.refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/live.py", line 246, in refresh
+    with self.console:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2024, in _check_buffer
+    self._write_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2093, in _write_buffer
+    self.file.write(text)
+OSError: [Errno 5] Input/output error
+15:15:31,798 graphrag.index.reporting.file_workflow_callbacks INFO Error executing verb "entity_extract" in create_base_extracted_entities: [Errno 5] Input/output error details=None
+15:15:31,798 graphrag.index.run ERROR error running workflow create_base_extracted_entities
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 39, in execute
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/entity_extract.py", line 151, in run_strategy
+    result = await strategy_exec(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/run_graph_intelligence.py", line 41, in run_gi
+    return await run_extract_entities(llm, docs, entity_types, reporter, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/run_graph_intelligence.py", line 88, in run_extract_entities
+    results = await extractor(
+              ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/graph/extractors/graph/graph_extractor.py", line 123, in __call__
+    result = await self._process_document(text, prompt_variables)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/graph/extractors/graph/graph_extractor.py", line 151, in _process_document
+    response = await self._llm(
+               ^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/json_parsing_llm.py", line 34, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_token_replacing_llm.py", line 37, in __call__
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_history_tracking_llm.py", line 33, in __call__
+    output = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/caching_llm.py", line 96, in __call__
+    result = await self._delegate(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 177, in __call__
+    result, start = await execute_with_retry()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 159, in execute_with_retry
+    async for attempt in retryer:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 165, in execute_with_retry
+    return await do_attempt(), start
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/rate_limiting_llm.py", line 147, in do_attempt
+    return await self._delegate(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 49, in __call__
+    return await self._invoke(input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/base/base_llm.py", line 53, in _invoke
+    output = await self._execute_llm(input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/llm/openai/openai_chat_llm.py", line 53, in _execute_llm
+    completion = await self.client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 1412, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1816, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1510, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/openai/_base_client.py", line 1549, in _request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1674, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1702, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1739, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_client.py", line 1776, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpx/_transports/default.py", line 377, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 143, in handle_async_request
+    raise exc
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 113, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 186, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_async/http11.py", line 224, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/httpcore/_backends/anyio.py", line 35, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1142, in receive
+    await self._protocol.read_event.wait()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/run.py", line 325, in run_pipeline
+    result = await workflow.run(context, callbacks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 369, in run
+    timing = await self._execute_verb(node, context, callbacks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow.py", line 415, in _execute_verb
+    result = await result
+             ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/verbs/entities/extraction/entity_extract.py", line 161, in entity_extract
+    results = await derive_from_rows(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows.py", line 33, in derive_from_rows
+    return await derive_from_rows_asyncio_threads(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 40, in derive_from_rows_asyncio_threads
+    return await derive_from_rows_base(input, transform, callbacks, gather)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 49, in derive_from_rows_base
+    result = await gather(execute)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 38, in gather
+    return await asyncio.gather(*[execute_task(task) for task in tasks])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_asyncio_threads.py", line 36, in execute_task
+    return await thread
+           ^^^^^^^^^^^^
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/execution/derive_from_rows_base.py", line 47, in execute
+    tick(1)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/progress/progress_ticker.py", line 21, in __call__
+    self._callback(
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/verb_callbacks/delegating_verb_callbacks.py", line 22, in progress
+    self._workflow_callbacks.on_step_progress(self._node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow_callbacks/workflow_callbacks_manager.py", line 51, in on_step_progress
+    callback.on_step_progress(node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/datashaper/workflow/workflow_callbacks/workflow_callbacks_manager.py", line 51, in on_step_progress
+    callback.on_step_progress(node, progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/reporting/progress_workflow_callbacks.py", line 54, in on_step_progress
+    self._latest(progress)
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 165, in __call__
+    self.refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 111, in refresh
+    self.force_refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/graphrag/index/progress/rich.py", line 115, in force_refresh
+    self.live.refresh()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/live.py", line 246, in refresh
+    with self.console:
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2024, in _check_buffer
+    self._write_buffer()
+  File "/home/kuro/anaconda3/envs/GraphragTest/lib/python3.11/site-packages/rich/console.py", line 2093, in _write_buffer
+    self.file.write(text)
+OSError: [Errno 5] Input/output error
+15:15:31,800 graphrag.index.reporting.file_workflow_callbacks INFO Error running pipeline! details=None
+15:15:58,190 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:15:58,192 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 52.039999999999054. input_tokens=2936, output_tokens=842
+15:16:32,128 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:16:32,129 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 85.97499999999854. input_tokens=2797, output_tokens=1270
+15:17:11,612 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:17:11,613 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 39.483000000000175. input_tokens=34, output_tokens=448
+15:17:12,841 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:17:12,842 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 74.64899999999943. input_tokens=34, output_tokens=1175
+15:17:17,424 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:17:17,426 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 131.28000000000065. input_tokens=2936, output_tokens=1746
+15:20:03,544 httpx INFO HTTP Request: POST http://localhost:3000/v1/chat/completions "HTTP/1.1 200 OK"
+15:20:03,546 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 166.1190000000006. input_tokens=34, output_tokens=1763
+15:20:03,548 datashaper.workflow.workflow INFO executing verb merge_graphs
+15:20:03,552 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_extracted_entities.parquet

@@ -1,0 +1,306 @@
+[SYS] 2024/11/18 - 04:47:27 | One API v0.6.8 started 
+[SYS] 2024/11/18 - 04:47:27 | SQL_DSN not set, using SQLite as database 
+[SYS] 2024/11/18 - 04:47:27 | database migration started 
+[SYS] 2024/11/18 - 04:47:27 | database migrated 
+[SYS] 2024/11/18 - 04:47:27 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2024/11/18 - 04:47:27 | using theme default 
+[SYS] 2024/11/18 - 04:47:27 | initializing token encoders 
+[SYS] 2024/11/18 - 04:47:28 | token encoders initialized 
+[SYS] 2024/11/18 - 04:47:28 | server started on http://localhost:3000 
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473154512633322105016 | 200 |    3.605851ms |             ::1 |     GET /
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473156139222333259226 | 200 |   12.244709ms |             ::1 |     GET /static/js/main.b27c45fe.js
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473156135473446445552 | 200 |   12.579859ms |             ::1 |     GET /static/css/main.e889a93a.css
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473164759251183277997 | 200 |     190.339µs |             ::1 |     GET /static/js/832.f0660d30.chunk.js
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473164903521136426778 | 200 |    1.002604ms |             ::1 |     GET /logo.png
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473170672175105530931 | 200 |    1.848146ms |             ::1 |     GET /static/media/icons.38c6d8bab26db77d8c80.woff2
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473170921679288508583 | 200 |     476.374µs |             ::1 |     GET /api/status
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473174541664996393424 | 200 |     122.686µs |             ::1 |     GET /api/home_page_content
+[GIN] 2024/11/18 - 04:47:31 | 2024111804473174537439928837007 | 200 |     259.048µs |             ::1 |     GET /api/notice
+[GIN] 2024/11/18 - 04:47:36 | 2024111804473630626514109611551 | 401 |     101.616µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:47:36 | 2024111804473630617790565752126 | 401 |     198.017µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:47:36 | 2024111804473633391878570088921 | 200 |     141.227µs |             ::1 |     GET /login?expired=true
+[GIN] 2024/11/18 - 04:47:36 | 2024111804473638262985555466898 | 200 |      99.306µs |             ::1 |     GET /api/status
+[GIN] 2024/11/18 - 04:47:43 | 2024111804474364695990130227424 | 200 |   43.557687ms |             ::1 |    POST /api/user/login
+[GIN] 2024/11/18 - 04:47:43 | 2024111804474369899101216863113 | 200 |     523.896µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:47:48 | 202411180447486791571494352422 | 200 |     476.143µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:47:48 | 202411180447486791569111126343 | 200 |    2.376038ms |             ::1 |     GET /api/models
+[SYS] 2024/11/18 - 04:47:49 | {"messages":[{"role":"user","content":"hi"}],"model":"glm-4","max_tokens":2,"temperature":0.01,"top_p":0.01} 
+[GIN] 2024/11/18 - 04:47:51 | 2024111804474968769107769189077 | 200 |  1.562606061s |             ::1 |     GET /api/channel/test/1?model=glm-4
+[SYS] 2024/11/18 - 04:47:52 | {"messages":[{"role":"user","content":"hi"}],"model":"glm-4","max_tokens":2,"temperature":0.01,"top_p":0.01} 
+[GIN] 2024/11/18 - 04:47:53 | 2024111804475290892680118558378 | 200 |  267.996412ms |             ::1 |     GET /api/channel/test/1?model=glm-4
+[GIN] 2024/11/18 - 04:50:46 | 202411180450467785275151784721 | 200 |   13.391632ms |             ::1 |  DELETE /api/channel/1
+[GIN] 2024/11/18 - 04:50:50 | 2024111804505047877164108116744 | 200 |     370.525µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:50:52 | 2024111804505266991063224674308 | 200 |    7.459286ms |             ::1 |  DELETE /api/token/1
+[GIN] 2024/11/18 - 04:50:54 | 202411180450542129781491590762 | 200 |     280.894µs |             ::1 |     GET /api/user/available_models
+[GIN] 2024/11/18 - 04:50:58 | 2024111804505810478820107057835 | 200 |     323.096µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:50:58 | 2024111804505810482769249995425 | 200 |     371.968µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:50:59 | 202411180450592083962587364449 | 200 |     239.827µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:51:00 | 2024111804510068317943712212102 | 200 |     214.424µs |             ::1 |     GET /api/user/available_models
+[GIN] 2024/11/18 - 04:51:06 | 2024111804510636373779096607608 | 200 |     305.148µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:51:06 | 2024111804510636377622913212024 | 200 |     342.298µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:51:10 | 20241118045110216827992933097 | 200 |     155.321µs |             ::1 |     GET /api/group/
+[GIN] 2024/11/18 - 04:51:10 | 20241118045110206788939030602 | 200 |       1.266ms |             ::1 |     GET /api/channel/models
+[GIN] 2024/11/18 - 04:51:38 | 2024111804513891918823942040868 | 200 |     299.047µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:51:38 | 2024111804513891923568873004074 | 200 |     340.037µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:51:42 | 2024111804514241671189443580433 | 200 |     200.393µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:51:42 | 2024111804514299652461176384904 | 200 |     236.595µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:51:42 | 2024111804514299652622187361300 | 200 |     449.071µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:51:43 | 2024111804514391798969651893335 | 200 |     163.633µs |             ::1 |     GET /api/group/
+[GIN] 2024/11/18 - 04:51:43 | 2024111804514391794259658953282 | 200 |     854.404µs |             ::1 |     GET /api/channel/models
+[GIN] 2024/11/18 - 04:52:23 | 2024111804522347509231754736907 | 200 |   15.129722ms |             ::1 |    POST /api/channel/
+[GIN] 2024/11/18 - 04:52:25 | 2024111804522571431135437583068 | 200 |     231.007µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:52:26 | 2024111804522629631298410981523 | 200 |     277.594µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:52:26 | 2024111804522629632224769581581 | 200 |     396.143µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 04:52:26 | 2024111804522693388467533662508 | 200 |     275.256µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 04:52:28 | 2024111804522822448224918216794 | 200 |     292.811µs |             ::1 |     GET /api/user/available_models
+[GIN] 2024/11/18 - 04:52:36 | 2024111804523671821373085774168 | 200 |    8.167025ms |             ::1 |    POST /api/token/
+[GIN] 2024/11/18 - 04:52:38 | 2024111804523837826686387793384 | 200 |     400.456µs |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 04:52:38 | 2024111804523837828001398252240 | 200 |     402.466µs |             ::1 |     GET /api/models
+[SYS] 2024/11/18 - 04:52:41 | {"messages":[{"role":"user","content":"hi"}],"model":"glm-4","max_tokens":2,"temperature":0.01,"top_p":0.01} 
+[SYS] 2024/11/18 - 04:52:42 | testing channel #2, response: 
+{"choices":[{"finish_reason":"length","index":0,"message":{"content":"Hello","role":"assistant"}}],"created":1731876762,"id":"202411180452425db8d32009664de6","model":"glm-4","request_id":"202411180452425db8d32009664de6","usage":{"completion_tokens":2,"prompt_tokens":6,"total_tokens":8}} 
+[GIN] 2024/11/18 - 04:52:42 | 202411180452412500516010244493 | 200 |  1.308514135s |             ::1 |     GET /api/channel/test/2?model=glm-4
+[GIN] 2024/11/18 - 04:52:44 | 2024111804524498349222363304615 | 200 |     223.196µs |             ::1 |     GET /api/token/?p=0&order=
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093626996015457271868 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093626998806456048409 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093626998402998123201 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093627002199623303572 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093627082784567056923 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093626995846333863102 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093626996014184621505 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093627082465813174235 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093627000240883483017 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093627342797932954700 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628550850586398043 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628566999064764770 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628565648257866772 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628631884031536375 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628641556124354504 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628645083940192195 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628641428833414132 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628643169815821526 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093628640034014359917 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093629677367427314627 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093630619849768996267 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093630634609724360956 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093630644465526685597 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093631685006768385341 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:36 | 2024111805093631738237324177412 | user 1 has enough quota 499999981281066, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093626995846333863102 | 200 |  1.521161139s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093628566999064764770 | 200 |  1.505632688s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093626996014184621505 | 200 |  1.521270708s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093627082465813174235 | 200 |  1.520555116s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093627082784567056923 | 200 |  1.520521422s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093628565648257866772 | 200 |  1.507311146s |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093626995846333863102 | record consume log: userId=1, channelId=2, promptTokens=130, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093782344593726672895 | user 1 has enough quota 499999981281061, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093782345393163276808 | user 1 has enough quota 499999981281061, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093782345980548875885 | user 1 has enough quota 499999981281061, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093782344551423040879 | user 1 has enough quota 499999981281061, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093627082465813174235 | record consume log: userId=1, channelId=2, promptTokens=123, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093781341261214711519 | user 1 has enough quota 499999981281056, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093781412875760379909 | user 1 has enough quota 499999981281056, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093627082784567056923 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093627342797932954700 | 200 |  1.704975901s |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:37 | 2024111805093628566999064764770 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093628550850586398043 | 200 |  1.701023948s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:37 | 2024111805093627000240883483017 | 200 |  1.716643286s |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093627342797932954700 | record consume log: userId=1, channelId=2, promptTokens=130, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093798248068183406760 | user 1 has enough quota 499999981281041, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093627000240883483017 | record consume log: userId=1, channelId=2, promptTokens=123, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093628550850586398043 | record consume log: userId=1, channelId=2, promptTokens=122, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093782344593726672895 | 200 |  375.025935ms |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093626996015457271868 | 200 |  1.938180215s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628643169815821526 | 200 |  1.922708633s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093630634609724360956 | 200 |  1.902848082s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093631685006768385341 | 200 |  1.892348318s |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093782344593726672895 | record consume log: userId=1, channelId=2, promptTokens=127, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093628643169815821526 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093782345393163276808 | 200 |   443.60795ms |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093782344551423040879 | 200 |  443.612708ms |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093782344551423040879 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093782345393163276808 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093782345980548875885 | 200 |  557.699625ms |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093781412875760379909 | 200 |  567.136706ms |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093781341261214711519 | 200 |  568.055288ms |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093798248068183406760 | 200 |   410.00877ms |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093782345980548875885 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093626996014184621505 | record consume log: userId=1, channelId=2, promptTokens=129, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093781412875760379909 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093798248068183406760 | record consume log: userId=1, channelId=2, promptTokens=126, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093630634609724360956 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093781341261214711519 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093628565648257866772 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093626998402998123201 | 200 |  2.552727354s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628641428833414132 | 200 |  2.536524788s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093627002199623303572 | 200 |  2.552937861s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628631884031536375 | 200 |  2.536677477s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628645083940192195 | 200 |  2.536578449s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093630644465526685597 | 200 |  2.516656673s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093631738237324177412 | 200 |  2.505571845s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628640034014359917 | 200 |  2.536565382s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093628641556124354504 | 200 |  2.536688134s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093630619849768996267 | 200 |  2.516810431s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093629677367427314627 | 200 |  2.526382522s |       127.0.0.1 |    POST /v1/embeddings
+[GIN] 2024/11/18 - 05:09:38 | 2024111805093626998806456048409 | 200 |  2.553207044s |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093626998402998123201 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093628641428833414132 | record consume log: userId=1, channelId=2, promptTokens=122, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:38 | 2024111805093631738237324177412 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093630644465526685597 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093629677367427314627 | record consume log: userId=1, channelId=2, promptTokens=125, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093626998806456048409 | record consume log: userId=1, channelId=2, promptTokens=126, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093626996015457271868 | record consume log: userId=1, channelId=2, promptTokens=126, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093631685006768385341 | record consume log: userId=1, channelId=2, promptTokens=123, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093628640034014359917 | record consume log: userId=1, channelId=2, promptTokens=126, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093627002199623303572 | record consume log: userId=1, channelId=2, promptTokens=123, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093628631884031536375 | record consume log: userId=1, channelId=2, promptTokens=122, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093628645083940192195 | record consume log: userId=1, channelId=2, promptTokens=127, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093630619849768996267 | record consume log: userId=1, channelId=2, promptTokens=126, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:09:39 | 2024111805093628641556124354504 | record consume log: userId=1, channelId=2, promptTokens=124, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=5, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[SYS] 2024/11/18 - 05:09:40 | failed to get token encoder for model glm-4: no encoding for model glm-4, using encoder for gpt-3.5-turbo 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065781471053322063 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065748476522914072 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065781664242112540 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065871012027964920 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065889579694657945 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065889914733477295 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065820144968914876 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065781111251552450 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:09:40 | 2024111805094065781083138893118 | user 1 has enough quota 499999981280906, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:09:59 | 2024111805094065781471053322063 | 200 | 19.314987882s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:00 | 2024111805094065781471053322063 | record consume log: userId=1, channelId=2, promptTokens=2172, completionTokens=541, modelName=glm-4, tokenName=zhipu, quota=19263, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:00 | 2024111805094065820144968914876 | 200 | 19.650815296s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:00 | 2024111805094065820144968914876 | record consume log: userId=1, channelId=2, promptTokens=2802, completionTokens=512, modelName=glm-4, tokenName=zhipu, quota=23530, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:01 | 2024111805094065889914733477295 | 200 | 21.099777744s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:01 | 2024111805094065889914733477295 | record consume log: userId=1, channelId=2, promptTokens=2519, completionTokens=568, modelName=glm-4, tokenName=zhipu, quota=21918, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:03 | 2024111805094065781664242112540 | 200 | 22.955651596s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:03 | 2024111805094065781664242112540 | record consume log: userId=1, channelId=2, promptTokens=2619, completionTokens=553, modelName=glm-4, tokenName=zhipu, quota=22522, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:04 | 2024111805094065748476522914072 | 200 | 23.622845368s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:04 | 2024111805094065748476522914072 | record consume log: userId=1, channelId=2, promptTokens=2691, completionTokens=621, modelName=glm-4, tokenName=zhipu, quota=23516, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:04 | 2024111805094065889579694657945 | 200 | 23.932183695s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:04 | 2024111805094065889579694657945 | record consume log: userId=1, channelId=2, promptTokens=2608, completionTokens=654, modelName=glm-4, tokenName=zhipu, quota=23161, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:08 | 2024111805094065871012027964920 | 200 |  27.67191176s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:08 | 2024111805094065871012027964920 | record consume log: userId=1, channelId=2, promptTokens=2340, completionTokens=646, modelName=glm-4, tokenName=zhipu, quota=21201, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:08 | 2024111805094065781083138893118 | 200 | 28.322948534s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:09 | 2024111805094065781083138893118 | record consume log: userId=1, channelId=2, promptTokens=4453, completionTokens=657, modelName=glm-4, tokenName=zhipu, quota=36281, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:12 | 2024111805094065781111251552450 | 200 | 32.091053855s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:12 | 2024111805094065781111251552450 | record consume log: userId=1, channelId=2, promptTokens=3573, completionTokens=780, modelName=glm-4, tokenName=zhipu, quota=30907, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101279646317393286172 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280284669607798578 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280280402795430570 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280287032762201787 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280276706423360139 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280281204759410593 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280280403695430570 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280284764515806489 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280284215314371125 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280276707058497379 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:13 | 2024111805101280285312638004037 | user 1 has enough quota 499999981058607, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:10:33 | 2024111805101280280402795430570 | 200 | 20.325092906s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:33 | 2024111805101280280402795430570 | record consume log: userId=1, channelId=2, promptTokens=2359, completionTokens=543, modelName=glm-4, tokenName=zhipu, quota=20605, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:35 | 2024111805101280276706423360139 | 200 | 22.967956025s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:35 | 2024111805101280276706423360139 | record consume log: userId=1, channelId=2, promptTokens=2361, completionTokens=561, modelName=glm-4, tokenName=zhipu, quota=20747, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:36 | 2024111805101280284669607798578 | 200 |   23.8721926s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:36 | 2024111805101280284669607798578 | record consume log: userId=1, channelId=2, promptTokens=2396, completionTokens=611, modelName=glm-4, tokenName=zhipu, quota=21350, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:38 | 2024111805101280280403695430570 | 200 | 25.810454308s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:38 | 2024111805101280280403695430570 | record consume log: userId=1, channelId=2, promptTokens=2705, completionTokens=616, modelName=glm-4, tokenName=zhipu, quota=23580, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:39 | 2024111805101280284764515806489 | 200 | 26.710671468s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:39 | 2024111805101280284764515806489 | record consume log: userId=1, channelId=2, promptTokens=3047, completionTokens=708, modelName=glm-4, tokenName=zhipu, quota=26661, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:40 | 2024111805101279646317393286172 | 200 |  28.15870839s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:41 | 2024111805101279646317393286172 | record consume log: userId=1, channelId=2, promptTokens=3150, completionTokens=742, modelName=glm-4, tokenName=zhipu, quota=27634, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:41 | 2024111805101280281204759410593 | 200 | 28.638060394s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:41 | 2024111805101280281204759410593 | record consume log: userId=1, channelId=2, promptTokens=3062, completionTokens=661, modelName=glm-4, tokenName=zhipu, quota=26434, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:43 | 2024111805101280287032762201787 | 200 | 30.615793556s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:43 | 2024111805101280287032762201787 | record consume log: userId=1, channelId=2, promptTokens=2720, completionTokens=655, modelName=glm-4, tokenName=zhipu, quota=23963, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:44 | 2024111805101280276707058497379 | 200 |  31.60099186s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:44 | 2024111805101280276707058497379 | record consume log: userId=1, channelId=2, promptTokens=4897, completionTokens=582, modelName=glm-4, tokenName=zhipu, quota=38901, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:46 | 2024111805101280284215314371125 | 200 | 33.379911817s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:46 | 2024111805101280284215314371125 | record consume log: userId=1, channelId=2, promptTokens=3798, completionTokens=738, modelName=glm-4, tokenName=zhipu, quota=32206, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:10:51 | 2024111805101280285312638004037 | 200 | 38.449495767s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:10:51 | 2024111805101280285312638004037 | record consume log: userId=1, channelId=2, promptTokens=4339, completionTokens=891, modelName=glm-4, tokenName=zhipu, quota=37133, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105128985337802545002 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129211193371881575 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129211901998831950 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129209337555398245 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129211632919866540 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129209338826356659 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:10:51 | 2024111805105129210469761156170 | user 1 has enough quota 499999980759393, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:11:13 | 2024111805105129209337555398245 | 200 | 22.473701553s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:13 | 2024111805105129209337555398245 | record consume log: userId=1, channelId=2, promptTokens=2917, completionTokens=531, modelName=glm-4, tokenName=zhipu, quota=24481, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:16 | 2024111805105129211901998831950 | 200 | 25.543200714s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:16 | 2024111805105129211901998831950 | record consume log: userId=1, channelId=2, promptTokens=2777, completionTokens=641, modelName=glm-4, tokenName=zhipu, quota=24268, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:19 | 2024111805105129211193371881575 | 200 |   27.8336875s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:19 | 2024111805105129211193371881575 | record consume log: userId=1, channelId=2, promptTokens=3086, completionTokens=591, modelName=glm-4, tokenName=zhipu, quota=26107, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:20 | 2024111805105128985337802545002 | 200 | 28.997005625s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:20 | 2024111805105128985337802545002 | record consume log: userId=1, channelId=2, promptTokens=6703, completionTokens=502, modelName=glm-4, tokenName=zhipu, quota=51156, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:22 | 2024111805105129211632919866540 | 200 | 30.724481167s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:22 | 2024111805105129211632919866540 | record consume log: userId=1, channelId=2, promptTokens=3646, completionTokens=679, modelName=glm-4, tokenName=zhipu, quota=30708, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:26 | 2024111805112691053669875902262 | 200 |     414.305µs |             ::1 |     GET /api/notice
+[GIN] 2024/11/18 - 05:11:26 | 2024111805112691053670404211602 | 200 |     355.736µs |             ::1 |     GET /api/home_page_content
+[GIN] 2024/11/18 - 05:11:27 | 2024111805112733632261850583729 | 200 |      574.55µs |             ::1 |     GET /api/models
+[GIN] 2024/11/18 - 05:11:27 | 2024111805112733607074587100518 | 200 |    1.004596ms |             ::1 |     GET /api/channel/?p=0
+[GIN] 2024/11/18 - 05:11:32 | 2024111805105129209338826356659 | 200 |  40.89172855s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:32 | 2024111805105129209338826356659 | record consume log: userId=1, channelId=2, promptTokens=4027, completionTokens=1062, modelName=glm-4, tokenName=zhipu, quota=36132, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:11:32 | 2024111805113289446283869161483 | 200 |     396.808µs |             ::1 |     GET /api/token/?p=0&order=
+[GIN] 2024/11/18 - 05:11:32 | 2024111805105129210469761156170 | 200 | 41.704994427s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:11:33 | 2024111805105129210469761156170 | record consume log: userId=1, channelId=2, promptTokens=6368, completionTokens=764, modelName=glm-4, tokenName=zhipu, quota=50638, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:12:07 | 2024111805120774656649477655814 | user 1 has enough quota 499999980515903, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:12:07 | 2024111805120774588551290747218 | user 1 has enough quota 499999980515903, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:12:07 | 2024111805120774656838667813902 | user 1 has enough quota 499999980515903, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:12:27 | 2024111805120774588551290747218 | 200 | 19.868992343s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:12:27 | 2024111805120774588551290747218 | record consume log: userId=1, channelId=2, promptTokens=2473, completionTokens=549, modelName=glm-4, tokenName=zhipu, quota=21457, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:12:33 | 2024111805120774656649477655814 | 200 |  25.77092001s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:12:33 | 2024111805120774656649477655814 | record consume log: userId=1, channelId=2, promptTokens=2412, completionTokens=668, modelName=glm-4, tokenName=zhipu, quota=21868, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:12:42 | 2024111805120774656838667813902 | 200 | 34.543059203s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:12:42 | 2024111805120774656838667813902 | record consume log: userId=1, channelId=2, promptTokens=9848, completionTokens=610, modelName=glm-4, tokenName=zhipu, quota=74252, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:12:42 | 2024111805124233524425605366004 | user 1 has enough quota 499999980398326, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:12:42 | 2024111805124232950343266631178 | user 1 has enough quota 499999980398326, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:13:07 | 2024111805124232950343266631178 | 200 | 25.490120899s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:13:07 | 2024111805124232950343266631178 | record consume log: userId=1, channelId=2, promptTokens=3375, completionTokens=626, modelName=glm-4, tokenName=zhipu, quota=28408, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:13:13 | 2024111805124233524425605366004 | 200 | 31.357256947s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:13:13 | 2024111805124233524425605366004 | record consume log: userId=1, channelId=2, promptTokens=3687, completionTokens=609, modelName=glm-4, tokenName=zhipu, quota=30502, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:14:05 | 2024111805140533835063100492153 | user 1 has enough quota 499999980339416, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:14:35 | 2024111805140533835063100492153 | 200 | 30.388179086s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:14:35 | 2024111805140533835063100492153 | record consume log: userId=1, channelId=2, promptTokens=3702, completionTokens=750, modelName=glm-4, tokenName=zhipu, quota=31610, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:15:08 | 2024111805150876619854321149186 | user 1 has enough quota 499999980307806, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:15:09 | 2024111805150876619854321149186 | 200 |  446.723196ms |       127.0.0.1 |    POST /v1/embeddings
+[INFO] 2024/11/18 - 05:15:09 | 2024111805150876619854321149186 | record consume log: userId=1, channelId=2, promptTokens=68, completionTokens=0, modelName=embedding-2, tokenName=zhipu, quota=3, content=模型倍率 0.04，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:15:10 | 2024111805151087297089598449549 | user 1 has enough quota 499999980307803, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:15:10 | 2024111805151087331642176121996 | user 1 has enough quota 499999980307803, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:15:10 | 2024111805151087332199400905658 | user 1 has enough quota 499999980307803, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:15:32 | 2024111805151087297089598449549 | 200 | 21.663692082s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:15:32 | 2024111805151087297089598449549 | record consume log: userId=1, channelId=2, promptTokens=2198, completionTokens=604, modelName=glm-4, tokenName=zhipu, quota=19895, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:15:42 | 2024111805151087331642176121996 | 200 | 31.925621687s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:15:42 | 2024111805151087331642176121996 | record consume log: userId=1, channelId=2, promptTokens=4368, completionTokens=747, modelName=glm-4, tokenName=zhipu, quota=36317, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:16:07 | 2024111805151087332199400905658 | 200 | 56.853507693s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:16:07 | 2024111805151087332199400905658 | record consume log: userId=1, channelId=2, promptTokens=8043, completionTokens=988, modelName=glm-4, tokenName=zhipu, quota=64121, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:16:07 | 2024111805160775664255669621890 | user 1 has enough quota 499999980187470, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:16:07 | 2024111805160775351679155650713 | user 1 has enough quota 499999980187470, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:16:40 | 2024111805160775664255669621890 | 200 | 32.464820151s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:16:40 | 2024111805160775664255669621890 | record consume log: userId=1, channelId=2, promptTokens=4935, completionTokens=719, modelName=glm-4, tokenName=zhipu, quota=40144, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:17:59 | 2024111805160775351679155650713 | 200 | 1m51.465432127s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:17:59 | 2024111805160775351679155650713 | record consume log: userId=1, channelId=2, promptTokens=9425, completionTokens=2000, modelName=glm-4, tokenName=zhipu, quota=81118, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:18:16 | 2024111805181648046468468643816 | user 1 has enough quota 499999980066208, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:18:16 | 2024111805181648012694744904239 | user 1 has enough quota 499999980066208, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:18:36 | 2024111805181648046468468643816 | 200 | 19.950276444s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:18:36 | 2024111805181648046468468643816 | record consume log: userId=1, channelId=2, promptTokens=2337, completionTokens=534, modelName=glm-4, tokenName=zhipu, quota=20385, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:18:44 | 2024111805181648012694744904239 | 200 | 28.293313882s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:18:44 | 2024111805181648012694744904239 | record consume log: userId=1, channelId=2, promptTokens=4958, completionTokens=533, modelName=glm-4, tokenName=zhipu, quota=38987, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:18:45 | 202411180518456659501101063797 | user 1 has enough quota 499999980006836, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:18:45 | 202411180518456762308900924332 | user 1 has enough quota 499999980006836, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:18:45 | 202411180518456743736524012832 | user 1 has enough quota 499999980006836, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:19:08 | 202411180518456659501101063797 | 200 | 22.998563641s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:19:08 | 202411180518456659501101063797 | record consume log: userId=1, channelId=2, promptTokens=2634, completionTokens=628, modelName=glm-4, tokenName=zhipu, quota=23161, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:19:25 | 202411180518456743736524012832 | 200 | 40.686139677s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:19:25 | 202411180518456743736524012832 | record consume log: userId=1, channelId=2, promptTokens=6133, completionTokens=619, modelName=glm-4, tokenName=zhipu, quota=47940, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:20:41 | 202411180518456762308900924332 | 200 | 1m56.438179359s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:20:41 | 202411180518456762308900924332 | record consume log: userId=1, channelId=2, promptTokens=9893, completionTokens=2000, modelName=glm-4, tokenName=zhipu, quota=84441, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:20:58 | 2024111805205835860354493578494 | user 1 has enough quota 499999979851294, trusted and no need to pre-consume 
+[INFO] 2024/11/18 - 05:20:58 | 2024111805205835849875483111512 | user 1 has enough quota 499999979851294, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:21:19 | 2024111805205835860354493578494 | 200 | 20.767470619s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:21:19 | 2024111805205835860354493578494 | record consume log: userId=1, channelId=2, promptTokens=2446, completionTokens=517, modelName=glm-4, tokenName=zhipu, quota=21038, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[GIN] 2024/11/18 - 05:21:21 | 2024111805205835849875483111512 | 200 | 23.572829971s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:21:22 | 2024111805205835849875483111512 | record consume log: userId=1, channelId=2, promptTokens=3109, completionTokens=564, modelName=glm-4, tokenName=zhipu, quota=26079, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 
+[INFO] 2024/11/18 - 05:21:22 | 2024111805212195045328773188166 | user 1 has enough quota 499999979804177, trusted and no need to pre-consume 
+[GIN] 2024/11/18 - 05:21:46 | 2024111805212195045328773188166 | 200 | 24.580416541s |       127.0.0.1 |    POST /v1/chat/completions
+[INFO] 2024/11/18 - 05:21:46 | 2024111805212195045328773188166 | record consume log: userId=1, channelId=2, promptTokens=3559, completionTokens=629, modelName=glm-4, tokenName=zhipu, quota=29735, content=模型倍率 7.10，分组倍率 1.00，补全倍率 1.00 

@@ -1,0 +1,12 @@
+You are a helpful assistant responsible for generating a comprehensive summary of the data provided below.
+Given one or two entities, and a list of descriptions, all related to the same entity or group of entities.
+Please concatenate all of these into a single, comprehensive description. Make sure to include information collected from all the descriptions.
+If the provided descriptions are contradictory, please resolve the contradictions and provide a single, coherent summary.
+Make sure it is written in third person, and include the entity names so we have the full context.
+
+
+Input Example:
+
+Question: Who is the mother of the tennis World No. 1?
+Description: Melanie Molitor is the mother of Martina Hingis, who achieved the position of World No. 1 in women's singles tennis.
+Expected Output Example: Melanie Molitor is the mother of Martina Hingis, who was ranked World No. 1 in women's singles tennis.

@@ -1,0 +1,2 @@
+dataset,version,metric,mode,graphrag_model
+triviaqarc,db6413,score,gen,60.00
