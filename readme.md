@@ -1,92 +1,71 @@
-# 使用 GraphRAG 和 OpenCompass 进行 API 评测
+# 使用 GraphRAG 和 OpenCompass 进行 API 评测说明
 
 ## 环境配置
 
-### 必要依赖
+除了 GraphRAG 和 OpenCompass 的 conda 环境配置外，为了使用 API 测评，还需要额外安装以下依赖：
 
-除了配置 GraphRAG 和 OpenCompass 的 Conda 环境外，还需额外安装以下依赖：
+`pip install "opencompass[api]"`
 
-```bash
-pip install "opencompass[api]"
-配置参考
-以下视频可帮助搭建环境：
+## 启动和配置
 
-GraphRAG 配置视频 1
-GraphRAG 配置视频 2
-启动和配置
-GraphRAG 配置
-.env 文件
-配置以下环境变量：
+要正常运行 GraphRAG 的测评，首先需要启动`one-api`，并在 GraphRAG 文件夹中配置 API。
 
-plaintext
-Copy code
-GRAPHRAG_CHAT_API_KEY=<your_chat_api_key>
-GRAPHRAG_EMBEDDING_API_KEY=<your_embedding_api_key>
-settings.yaml 文件
-参数已针对 Zhipu 模型调整。如果使用其他模型，请根据需求修改。
+### GraphRAG 文件夹的配置
 
-utils/main.py 文件
+- **`.env` 文件**  
+  需要将`GRAPHRAG_CHAT_API_KEY`以及`GRAPHRAG_EMBEDDING_API_KEY`替换为实际的 API key。
 
-路径调整：将第 48 行中的路径替换为本地路径 GraphRAGTest/ragtest/inputs/artifacts。
-API Key 修改：调整第 110 和 119 行的 API Key 为有效的 OneAPI 转化后的 API Key。
-OpenCompass 配置
-启动 通过以下命令启动 OpenCompass 测评：
+- **`settings.yaml` 文件**  
+  该文件中的参数已经针对 Zhipu 模型进行了调整。如果使用其他模型，需要进行相应的调整。
 
-bash
-Copy code
-bash run.sh
-评测脚本
+- **`utils/main.py` 文件**  
+  - 修改`setup_llm_and_embedder`函数中的 API key 为实际的 API key。  
+  - 将路径调整到本地路径`GraphRAGTest/ragtest/inputs/artifacts`（第 48 行）。  
+  - 确保第 110 行和第 119 行的 API key 已替换为 OneAPI 转化后的 API key。
 
-普通评测：运行 eval_api_zhipu_v2.py 测试 Zhipu 模型。
-确保修改 opencompass/configs/api_examples/eval_api_zhipu_v2.py 中的 API Key。
-GraphRAG 评测：运行 configs/eval_myTest.py 测试 GraphRAG。
-注意：运行此脚本前需启动 OneAPI 服务。
-GraphRAG 测评文件说明
-主要评测代码位于 opencompass/opencompass/models/GraphRAGModel.py，功能包括：
+### OpenCompass 文件夹的配置
 
-Prompt 拆分
-将 Prompt 拆分为知识部分和问题部分。
+- 通过运行`run.sh`启动测评，其中`eval_api_zhipu_v2.py`是对 Zhipu 模型的普通评测。  
+  如果需要使用该评测，需要修改`opencompass/configs/api_examples/eval_api_zhipu_v2.py`中的 API key。
 
-知识存储
-将知识部分存入 GraphRAG 中。
+- 运行`configs/eval_myTest.py`会对 GraphRAG 进行评测，但需要提前启动`one-api`服务。
 
-索引构建
+## GraphRAG 测评文件说明
 
-默认支持最大 7 次重试以确保索引构建成功。
-修改索引路径：需在 _run_indexing_command() 中重新配置索引命令路径。
-启动 API 服务
+为了执行 GraphRAG 的评测，主要的文件是`opencompass/opencompass/models/GraphRAGModel.py`，其包含以下功能：
 
-开启用于接收问题的 API 服务。
-修改路径：需在 _start_api_service() 中重新配置 api_command。
-问题传递和回答接收
-发送问题并接收答案。
+- **拆分 prompt 为知识部分和问题部分的代码**  
+  将输入的 prompt 拆分为知识内容和问题部分，以便更好地组织检索。
 
-关闭 API 服务
-确保 GraphRAG 的接收 API 服务在完成后关闭。
+- **将拆出的知识部分存入 GraphRAG 中的代码**  
+  确保知识被有效存储以供检索。
 
-当前问题与改进方向
-研究方向
-理解 GraphRAG 原理
-深入研究 GraphRAG 在知识存储与检索中的机制。
+- **运行索引构建的代码**  
+  当前设定最大 7 次重试以确保索引构建成功。  
+  **注意**：需要在`_run_indexing_command()`中重新配置索引构建命令的路径。
 
-寻找更适合的数据集
-使用高质量、多样性的数据集，优化模型表现。
+- **启动 GraphRAG 接收问题 API 的代码**  
+  该部分代码会额外开启一个命令窗口等待问题输入。  
+  **注意**：需在`_start_api_service()`中重新配置`api_command`。
 
-改进建议
-指代消解问题
+- **发送问题并接收答案的代码**  
+  将问题通过 API 发送到服务端并接收模型返回的结果。
 
-解决如 “上一句提到人名，下一句包含 he/she/it” 的指代问题。
-提升模型对代词指代的准确性。
-段落级图谱构建
+- **关闭 GraphRAG 接收问题 API 的代码**  
+  确保在测试结束后关闭服务。
 
-当前图谱构建可能基于单句。
-探索按段落进行整体图谱构建，提高对上下文和关联性的理解。
-配置验证步骤
-配置 GraphRAG 和 OpenCompass 的 Conda 环境。
-配置 .env 和 settings.yaml 文件中的 API Key。
-确保 utils/main.py 文件中路径和 Key 已更新。
-启动 OneAPI 服务。
-运行 OpenCompass 测评脚本验证配置成功。
-go
-Copy code
-```
+## 当前问题与改进方向
+
+目前存在的问题：  
+- 使用 GraphRAG 产出的评分不如直接使用 Zhipu 模型。  
+- 对于某些复杂问题，GraphRAG 构建的知识图谱存在指代消解不准确的问题。
+
+改进方向：  
+1. **指代消解问题**  
+   增强对指代关系的识别能力，解决上一句为人名、下一句为代词时无法正确指向的问题。
+
+2. **段落级图谱构建**  
+   当前的图谱构建基于句子，后续可探索按段落构建更整体且具有关联性的图谱，提升对上下文的理解能力。
+
+3. **索引优化**  
+   优化索引构建算法，提高检索效率和准确率。
