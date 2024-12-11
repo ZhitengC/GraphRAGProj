@@ -37,7 +37,7 @@ class GraphRAGModel(BaseModel):
         )
         self._save_prompt(knowledge_content)
 
-        max_retries = 7  # 当构建索引时， 有可能会因为网络连接或者其他问题失败， 这里设置最大重试次数
+        max_retries = 7  # When building an index, it may fail due to network connection or other problems. Here you can set the maximum number of retries.
         retry_count = 0
         success = False
 
@@ -45,23 +45,23 @@ class GraphRAGModel(BaseModel):
             success = self._run_indexing_command()
             if not success:
                 retry_count += 1
-                print(f"索引构建失败，重试 {retry_count}/{max_retries}...")
+                print(f"Index build failed, try again {retry_count}/{max_retries}...")
                 time.sleep(2)
 
         if not success:
-            return "Error: 索引构建失败"
+            return "Error: Index build failed"
 
-        # 启动 API 服务
+        # Start API service
         api_process = self._start_api_service()
         if api_process is None:
-            return "Error: API 服务启动失败"
+            return "Error: API service startup failed"
 
         time.sleep(5)
 
-        # 发送问题并获取答案
+        # Send question and get answer
         answer = self._call_graphrag_api(question_content)
 
-        # 关闭 API 服务
+        # Turn off API service
         self._stop_api_service()
 
         return answer
