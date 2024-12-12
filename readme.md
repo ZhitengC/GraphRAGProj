@@ -1,81 +1,65 @@
-# 使用 GraphRAG 和 OpenCompass 进行评测， 以及对于GraphRAG进行优化
+# Improving Long-Text Retrieval with GraphRAG: Coreference Resolution Optimization and Evaluation
 
-## 环境配置
+## Environment Configuration
 
-除了 GraphRAG 和 OpenCompass 分别的 conda 环境配置外，为了使用 API 测评，还需要额外安装以下依赖：
+In addition to the conda environment configurations for GraphRAG and OpenCompass, you also need to install the following dependencies in order to use API profiling:
 
 `pip install "opencompass[api]"`
 
-### 配置参考
 
-成功配置用于 GraphRAG 的环境，可以参考以下两个视频进行搭建：
-- [GraphRAG 配置视频 1](https://www.bilibili.com/video/BV1HmWQeKEQB/?spm_id_from=..search-card.all.click&vd_source=dd722f9cbe299d2a0d932b162f651357)
-- [GraphRAG 配置视频 2](https://www.bilibili.com/video/BV1aKWTexEeH/?vd_source=30acb5331e4f5739ebbad50f7cc6b949)
-
-成功配置 OpenCompass 环境，除了 OpenCompass 自身必要的安装以外，还需要额外安装对 `data` 和 `api` 的支持。这些内容可以参考 OpenCompass 的[说明文档](https://github.com/open-compass/opencompass)。
+To successfully configure the OpenCompass environment, in addition to the necessary installation of OpenCompass itself, you also need to install support for `data` and `api`. For these contents, please refer to the [documentation](https://github.com/open-compass/opencompass) of OpenCompass.
 
 ---
 
-## 启动和配置
+## Start and configure
 
-要正常运行 GraphRAG 的测评，首先需要启动`one-api`，并在 GraphRAG 文件夹中配置 API。
+To run GraphRAG's evaluation normally, you first need to start one-api and configure the API in the GraphRAG folder.
 
-### GraphRAG 文件夹的配置
+### GraphRAG folder configuration
 
-- **`.env` 文件**  
-  需要将`GRAPHRAG_CHAT_API_KEY`以及`GRAPHRAG_EMBEDDING_API_KEY`替换为实际的 API key。
+- **`.env` file**  
+  Need to replace`GRAPHRAG_CHAT_API_KEY`and`GRAPHRAG_EMBEDDING_API_KEY`with actual API key.
 
-- **`settings.yaml` 文件**  
-  该文件中的参数已经针对 Zhipu 模型进行了调整。如果使用其他模型，需要进行相应的调整。
+- **`settings.yaml` file**  
+  The parameters in this file have been adjusted for the Zhipu model. If you use other models, you need to adjust them accordingly.
 
-- **`utils/main.py` 文件**  
-  - 修改`setup_llm_and_embedder`函数中的 API key 为实际的 API key。  
-  - 将路径调整到本地路径`GraphRAGTest/ragtest/inputs/artifacts`（第 48 行）。  
-  - 确保第 110 行和第 119 行的 API key 已替换为 OneAPI 转化后的 API key。
+- **`utils/main.py` file**  
+  - Need to replace the API Key in the `setup_llm_and_embedder` file to the actual API key.
+  - Adjust the path to your local path`GraphRAGTest/ragtest/inputs/artifacts`（line 48 ）.
+  - Make sure the API key in lines 110 and 119 has been replaced with the converted API key from OneAPI.
 
-### OpenCompass 文件夹的配置
+### OpenCompass folder configuration
 
-- 通过运行`run.sh`启动测评，其中`eval_api_zhipu_v2.py`是对 Zhipu 模型的普通评测。  
-  如果需要使用该评测，需要修改`opencompass/configs/api_examples/eval_api_zhipu_v2.py`中的 API key。
+- Run `run.sh` to start evaluating, `eval_api_zhipu_v2.py`is the genearal testing with the Zhipu model.
+  If you need to use this evaluation, you need to modify the API key in `opencompass/configs/api_examples/eval_api_zhipu_v2.py`.
 
-- 运行`configs/eval_myTest.py`会对 GraphRAG 进行评测，但需要提前启动`one-api`服务。
+- Running `configs/eval_myTest.py`will start evaluation with GraphRAG，but need to `one-api` service as prior step.
 
 ---
 
-## GraphRAG 测评文件说明
+## GraphRAG Evaluation File Description
 
-为了执行 GraphRAG 的评测，主要的文件是`opencompass/opencompass/models/GraphRAGModel.py`，其包含以下功能：
+To conduct the evaluation of GraphRAG, the primary file is `opencompass/opencompass/models/GraphRAGModel.py`, which includes the following functionalities:
 
-- **拆分 prompt 为知识部分和问题部分的代码**  
-  将输入的 prompt 拆分为知识内容和问题部分，以便更好地组织检索。
+- **Code for splitting the prompt into knowledge and question parts**  
+  This splits the input prompt into a knowledge section and a question section to better organize retrieval.
 
-- **将拆出的知识部分存入 GraphRAG 中的代码**  
-  确保知识被有效存储以供检索。
+- **Code for storing the extracted knowledge part into GraphRAG**  
+  Ensures the extracted knowledge is effectively stored for retrieval purposes.
 
-- **运行索引构建的代码**  
-  当前设定最大 7 次重试以确保索引构建成功， 这是因为索引构建过程可能失败。
-  **注意**：需要在`_run_indexing_command()`中重新配置索引构建命令的路径。
+- **Code for running the indexing process**  
+  Currently configured to retry up to 7 times to ensure the indexing process succeeds, as indexing might fail.
+  **Note**：You need to reconfigure the indexing command path in `_run_indexing_command()`.
 
-- **启动 GraphRAG 接收问题 API 的代码**  
-  该部分代码会额外开启一个命令窗口等待问题输入。  
-  **注意**：需在`_start_api_service()`中重新配置`api_command`。
+- **Code for starting the GraphRAG API to receive questions**  
+  This part of the code launches an additional command window to wait for question inputs. 
+  **Note**：You need to reconfigure `api_command` in`_start_api_service()`.
 
-- **发送问题并接收答案的代码**  
-  将问题通过 API 发送到服务端并接收模型返回的结果。
+- **Code for sending questions and receiving answers**  
+  Sends questions to the server via the API and receives results returned by the model.
 
-- **关闭 GraphRAG 接收问题 API 的代码**  
-  确保在测试结束后关闭服务。
+- **Code for shutting down the GraphRAG API**  
+  Ensures that the service is shut down after the testing ends.
 
-## 当前问题与改进方向
 
-目前存在的问题：  
-- 使用 GraphRAG 产出的评分不如直接使用 Zhipu 模型。  不过则还是因为当前我使用的TriviaQA数据集不是特别适合RAG相关的测试， 因为内容中并不能100%保证一定存在正确答案， 而RAG的特性就是仅根据知识文档中的信息回答， 所以对于一些问题无法回答导致评分低于普通zhipu模型。
-- 对于部分复杂问题，GraphRAG 构建的知识图谱存在指代消解不准确的问题。
-
-改进方向：  
-1. **指代消解问题**  
-   增强对指代关系的识别能力，解决上一句为人名、下一句为代词时无法正确指向的问题。
-
-2. **段落级图谱构建**  
-   当前的图谱构建基于句子，后续可探索按段落构建更整体且具有关联性的图谱，提升对上下文的理解能力。
 
